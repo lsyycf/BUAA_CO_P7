@@ -13,7 +13,7 @@ module Bridge (
     assign TC0WE = addr >= 32'h7f00 && addr <= 32'h7f0b && byteen;
     assign TC1WE = addr >= 32'h7f10 && addr <= 32'h7f1b && byteen;
 
-    assign read = (addr >= 32'h0000 && addr <= 32'h7fff) ? DMData  :
+    assign read = (addr >= 32'h0000 && addr <= 32'h2fff) ? DMData  :
                   (addr >= 32'h7f00 && addr <= 32'h7f0b) ? TC0Data :
                   (addr >= 32'h7f10 && addr <= 32'h7f1b) ? TC1Data : 
 						32'd0;			  
